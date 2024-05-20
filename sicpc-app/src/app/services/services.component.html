@@ -1,0 +1,26 @@
+<div class="container-fluid background text-white py-5">
+  <h1 class="text-center mb-4">Nuestros servicios</h1>
+  <div *ngIf="isAuthenticated" class="d-flex justify-content-center mb-4">
+    <button class="btn btn-primary" (click)="addService()">Agregar Servicio</button>
+  </div>
+  <div class="row">
+    <div class="col-md-3 mb-4" *ngFor="let service of services; let i = index"
+         (mouseenter)="onMouseEnter(i)" (mouseleave)="onMouseLeave()">
+      <div class="card h-100">
+        <div class="card-body text-center">
+          <i style="font-size: 5rem;" class="{{ service.icon }}"></i>
+          <h5 class="card-title">{{ service.descripcionCorta }}</h5>
+        </div>
+        <div class="card-footer d-flex justify-content-between align-items-center" *ngIf="hoveredIndex === i">
+          <small>{{ service.descripcionLarga }}</small>
+          <!-- Botones de administración -->
+          <div *ngIf="isAuthenticated">
+            <button class="btn btn-info" (click)="editService(service)">Editar</button>
+            <button class="btn btn-danger" (click)="deleteService(service)">Eliminar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

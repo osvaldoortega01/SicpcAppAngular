@@ -1,0 +1,97 @@
+.a-white{
+    color: white;
+    text-decoration: none;
+}
+
+.logo-sicpc{
+    width: 7%;
+    min-height: 7%;
+    margin-right: 40px;
+}
+
+.centered-row {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .centered-row .col-md-6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .company-name{
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .navigation-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa; /* Fondo claro para la fila */
+    padding: 20px 0; /* Espaciado vertical */
+  }
+  
+  .nav-button {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333; /* Color de texto */
+    background-color: #e9ecef; /* Fondo de los botones */
+    border: 2px solid transparent; /* Borde inicial transparente */
+    border-radius: 8px; /* Bordes redondeados */
+    transition: all 0.3s ease; /* Transición suave para los efectos */
+  }
+  
+  .nav-button:hover {
+    background-color: #007bff; /* Fondo azul al hacer hover */
+    color: white; /* Color de texto blanco al hacer hover */
+    border-color: #007bff; /* Borde azul al hacer hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para el botón */
+  }
+  
+  .nav-button:active {
+    background-color: #0056b3; /* Fondo azul oscuro al hacer clic */
+    border-color: #0056b3; /* Borde azul oscuro al hacer clic */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra más pequeña al hacer clic */
+  }
+  .header {
+    background: linear-gradient(90deg, #007bff 0%, #0056b3 100%); /* Fondo con degradado */
+    padding: 10px; /* Espaciado alrededor del contenido */
+    color: white; /* Color del texto */
+    display: flex;
+    justify-content: flex-end; /* Alinea el contenido a la derecha */
+    align-items: center; /* Centra verticalmente el contenido */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para el contenedor */
+  }
+  
+  .contact-info {
+    text-align: end;
+    align-items: center; /* Centra los elementos verticalmente */
+    gap: 10px; /* Espacio entre los elementos */
+  }
+  
+  .contact-info span,
+  .contact-info .a-white {
+    margin: 0 10px; /* Espaciado horizontal entre los elementos */
+  }
+  
+  .contact-info .a-white {
+    color: white; /* Color del enlace */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    transition: color 0.3s ease; /* Transición suave para el color del enlace */
+  }
+  
+  .contact-info .a-white:hover {
+    color: #ffcc00; /* Color del enlace al pasar el ratón */
+  }
+  

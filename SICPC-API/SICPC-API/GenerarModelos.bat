@@ -1,0 +1,2 @@
+dotnet ef dbcontext scaffold "Server=sql-enclelac.database.windows.net;Database=Sicpc;User Id=enclelac;Password=serviciosocial.123;" Microsoft.EntityFrameworkCore.SqlServer --no-build -o "Entities/Models" -f --context SicpcContext --no-pluralize --no-onconfiguring
+PAUSE

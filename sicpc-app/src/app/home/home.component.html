@@ -1,0 +1,96 @@
+<div class="row">
+  <ngb-carousel
+    #carousel
+    [interval]="5000"
+    [pauseOnHover]="pauseOnHover"
+    [pauseOnFocus]="pauseOnFocus"
+    (slide)="onSlide($event)"
+  >
+    @for (img of images; track img; let i = $index) {
+    <ng-template ngbSlide>
+      <a
+        href="https://www.google.fr/?q=Number+{{ i + 1 }}"
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+      >
+        <div class="picsum-img-wrapper">
+          <img
+            [src]="img"
+            class="carousel-img"
+            alt="My image {{ i + 1 }} description"
+          />
+        </div>
+      </a>
+    </ng-template>
+    }
+  </ngb-carousel>
+
+  <hr />
+</div>
+
+<div class="row main-text">
+  <h1 class="header-title">
+    <strong>¿Quiénes somos?</strong>
+  </h1>
+  <p>
+    Somos una empresa de consultoría en la cual nos especializamos en la
+    cultura de prevención, dando capacitaciones con nuestro personal profesional
+    en respuestas a emergencias. Igualmente, en SICPC ayudamos a las empresas
+    para su continuidad del negocio asesorando y gestionando permisos y/o
+    licencias en los estados de Nuevo León, Coahuila y Tamaulipas.
+  </p>
+  <button routerLink="/contact" type="button" class="btn btn-primary">Contáctanos</button>
+</div>
+
+<hr/>
+<div class="row secondary-row">
+  <h2>Testimonios</h2>
+  <div class="col-md-6 testimonial">
+    <p>"SICPC nos ha ayudado a implementar un plan de respuesta a emergencias eficiente y completo. Su equipo es muy profesional y dedicado."</p>
+    <p><strong>- Cliente Satisfecho</strong></p>
+  </div>
+  <div class="col-md-6 testimonial">
+    <p>"Gracias a SICPC, logramos obtener todas las licencias necesarias para operar en Nuevo León sin ningún contratiempo."</p>
+    <p><strong>- Otro Cliente Satisfecho</strong></p>
+  </div>
+</div>
+
+<hr/>
+<div class="row secondary-row">
+  <h2>Equipo</h2>
+  <div class="col-md-4 team-member text-center">
+    <div style="font-size: 4rem; text-align: center;">
+      <i class="fa-solid fa-user-circle"></i>
+    </div>
+    <h4>Sergio Osvaldo Ortega de Santiago</h4>
+    <p>Director General</p>
+  </div>
+  <div class="col-md-4 team-member text-center">
+    <div style="font-size: 4rem; text-align: center;">
+      <i class="fa-solid fa-user-circle"></i>
+    </div>
+    <h4>Pedro López Mancías</h4>
+    <p>Gerente de Tamaulipas</p>
+  </div>
+  <div class="col-md-4 team-member text-center">
+    <div style="font-size: 4rem; text-align: center;">
+      <i class="fa-solid fa-user-circle"></i>
+    </div>
+    <h4>Ulises Valenzuela Benavidez</h4>
+    <p>Gerente de Coahuila</p>
+  </div>
+</div>
+
+<hr/>
+
+<div class="row secondary-row">
+  <div class="col-md-12 text-center">
+    <h2>¿Listo para comenzar?</h2>
+    <p>Contáctanos hoy mismo para obtener más información sobre nuestros servicios y cómo podemos ayudar a tu empresa.</p>
+    <button routerLink="/contact" type="button" class="btn btn-primary">Contáctanos</button>
+  </div>
+</div>
+
+<hr/>
+
+

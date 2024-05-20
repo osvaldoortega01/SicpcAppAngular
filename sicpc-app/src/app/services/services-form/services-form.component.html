@@ -1,0 +1,93 @@
+<!-- Modal -->
+<div>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <form [formGroup]="serviceForm" (ngSubmit)="saveService()">
+
+      <div class="modal-header">
+        <h5 class="modal-title">{{ action }} Servicio</h5>
+        <button type="button" class="close" (click)="onClose.next(false)" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Formulario de edición del servicio -->
+          <div class="form-group">
+            <label for="descripcionCorta">Descripción Corta</label>
+            <input type="text" class="form-control" id="descripcionCorta" formControlName="descripcionCorta">
+          </div>
+          <div class="form-group">
+            <label for="descripcionLarga">Descripción Larga</label>
+            <textarea class="form-control" id="descripcionLarga" formControlName="descripcionLarga" rows="3"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="icon">Ícono</label>
+            <div class="d-flex align-items-center">
+              <select class="form-control" id="icon" formControlName="icon">
+                <option value="fa-solid fa-user-shield">Escudo de usuario</option>
+                <option value="fa-solid fa-shield-alt">Escudo alternativo</option>
+                <option value="fa-solid fa-lock">Candado</option>
+                <option value="fa-solid fa-key">Llave</option>
+                <option value="fa-solid fa-fire">Fuego</option>
+                <option value="fa-solid fa-ban">Prohibido</option>
+                <option value="fa-solid fa-exclamation-triangle">Triángulo de advertencia</option>
+                <option value="fa-solid fa-bullhorn">Megáfono</option>
+                <option value="fa-solid fa-phone-volume">Volumen del teléfono</option>
+                <option value="fa-solid fa-video">Video</option>
+                <option value="fa-solid fa-camera">Cámara</option>
+                <option value="fa-solid fa-file-alt">Archivo alternativo</option>
+                <option value="fa-solid fa-address-book">Libreta de direcciones</option>
+                <option value="fa-solid fa-id-card">Tarjeta de identificación</option>
+                <option value="fa-solid fa-user">Usuario</option>
+                <option value="fa-solid fa-users">Usuarios</option>
+                <option value="fa-solid fa-chalkboard-teacher">Profesor de pizarra</option>
+                <option value="fa-solid fa-graduation-cap">Gorra de graduación</option>
+                <option value="fa-solid fa-book">Libro</option>
+                <option value="fa-solid fa-book-open">Libro abierto</option>
+                <option value="fa-solid fa-pencil-alt">Lápiz alternativo</option>
+                <option value="fa-solid fa-lightbulb">Bombilla</option>
+                <option value="fa-solid fa-balance-scale">Báscula de equilibrio</option>
+                <option value="fa-solid fa-database">Base de datos</option>
+                <option value="fa-solid fa-server">Servidor</option>
+                <option value="fa-solid fa-wrench">Llave inglesa</option>
+                <option value="fa-solid fa-tools">Herramientas</option>
+                <option value="fa-solid fa-cog">Engranaje</option>
+                <option value="fa-solid fa-toolbox">Caja de herramientas</option>
+                <option value="fa-solid fa-shield">Escudo</option>
+                <option value="fa-solid fa-first-aid">Primeros auxilios</option>
+                <option value="fa-solid fa-heartbeat">Frecuencia cardíaca</option>
+                <option value="fa-solid fa-ambulance">Ambulancia</option>
+                <option value="fa-solid fa-hospital">Hospital</option>
+                <option value="fa-solid fa-syringe">Jeringa</option>
+                <option value="fa-solid fa-brain">Cerebro</option>
+                <option value="fa-solid fa-atom">Átomo</option>
+                <option value="fa-solid fa-flask">Matraz</option>
+                <option value="fa-solid fa-microscope">Microscopio</option>
+                <option value="fa-solid fa-globe-americas">Globo americano</option>
+                <option value="fa-solid fa-globe">Globo</option>
+                <option value="fa-solid fa-map">Mapa</option>
+                <option value="fa-solid fa-gavel">Martillo de juez</option>
+                <option value="fa-solid fa-briefcase">Maletín</option>
+                <option value="fa-solid fa-briefcase-medical">Maletín médico</option>
+                <option value="fa-solid fa-business-time">Tiempo de negocios</option>
+                <option value="fa-solid fa-house-fire">Casa en llamas</option>
+                <option value="fa-solid fa-circle-radiation">Círculo de radiación</option>
+                <option value="fa-solid fa-building">Edificio</option>
+                <option value="fa-solid fa-tent-arrows-down">Tienda con flechas hacia abajo</option>
+                <option value="fa-solid fa-person-falling-burst">Persona cayendo</option>
+              </select>
+                            <i *ngIf="serviceForm.get('icon')" [class]="serviceForm.get('icon')!.value" style="font-size: 2rem; margin-left: 10px;"></i>
+            </div>
+          </div>
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="onClose.next(false)" data-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+      </div>
+      
+    </form>
+    </div>
+  </div>
+</div>

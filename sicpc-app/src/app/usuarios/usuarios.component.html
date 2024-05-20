@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>Administración de Usuarios</h1>
+  <div class="d-flex justify-content-center mb-4">
+    <button class="btn btn-primary" (click)="addUsuario()">Agregar Usuario</button>
+  </div>
+  <!-- Tabla para mostrar usuarios existentes -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nombre Completo</th>
+        <th>Correo</th>
+        <th>Teléfono</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.nombreCompleto }}</td>
+        <td>{{ user.correo }}</td>
+        <td>{{ user.telefonoMovil }}</td>
+        <td>
+          <button class="btn-edit" (click)="editUsuario(user)">
+            <i class="fas fa-edit"></i> Editar
+          </button>
+          <button class="btn-delete" (click)="deleteUsuario(user)">
+            <i class="fas fa-trash-alt"></i> Eliminar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

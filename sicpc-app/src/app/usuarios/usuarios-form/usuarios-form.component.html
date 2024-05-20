@@ -1,0 +1,122 @@
+<div class="modal-dialog">
+  <h1>Usuario</h1>
+  <div class="modal-content">
+    <form [formGroup]="usuarioForm" (ngSubmit)="saveUsuario()">
+      <div class="row form-group">
+        <div class="col-md-6">
+          <label for="nombreCompleto">Nombre Completo</label>
+          <input
+            class="form-control"
+            id="nombreCompleto"
+            formControlName="nombreCompleto"
+            placeholder="Nombre Completo"
+          />
+          <div
+            *ngIf="
+              usuarioForm.get('nombreCompleto')?.touched &&
+              usuarioForm.get('nombreCompleto')?.invalid
+            "
+            class="text-danger"
+          >
+            Nombre Completo es requerido.
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="correo">Correo</label>
+          <input
+            type="email"
+            class="form-control"
+            id="correo"
+            formControlName="correo"
+            placeholder="correo@ejemplo.com"
+          />
+          <div
+            *ngIf="
+              usuarioForm.get('correo')?.touched &&
+              usuarioForm.get('correo')?.invalid
+            "
+            class="text-danger"
+          >
+            <div *ngIf="usuarioForm.get('correo')?.errors?.['required']">
+              Correo es requerido.
+            </div>
+            <div *ngIf="usuarioForm.get('correo')?.errors?.['email']">
+              Correo no es válido.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            formControlName="username"
+            placeholder="Nombre de usuario"
+          />
+          <div
+            *ngIf="
+              usuarioForm.get('username')?.touched &&
+              usuarioForm.get('username')?.invalid
+            "
+            class="text-danger"
+          >
+            Username es requerido.
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="contrasena">Contraseña</label>
+          <input
+            type="password"
+            class="form-control"
+            id="contrasena"
+            formControlName="contrasena"
+            placeholder="Contraseña"
+          />
+          <div
+            *ngIf="
+              usuarioForm.get('contrasena')?.touched &&
+              usuarioForm.get('contrasena')?.invalid
+            "
+            class="text-danger"
+          >
+            <div *ngIf="usuarioForm.get('contrasena')?.errors?.['required']">
+              Contraseña es requerida.
+            </div>
+            <div *ngIf="usuarioForm.get('contrasena')?.errors?.['minlength']">
+              La contraseña debe tener al menos 6 caracteres.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="telefonomovil">Teléfono Móvil</label>
+          <input
+            type="tel"
+            class="form-control"
+            id="telefonomovil"
+            formControlName="telefonomovil"
+            placeholder="Teléfono Móvil"
+          />
+          <div
+            *ngIf="
+              usuarioForm.get('telefonomovil')?.touched &&
+              usuarioForm.get('telefonomovil')?.invalid
+            "
+            class="text-danger"
+          >
+            Teléfono Móvil es requerido.
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="onClose.next(false)" data-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+      </div>
+    </form>
+  </div>
+  <div class="row mt-3" *ngIf="submitted">
+    <div class="col-md-12 alert alert-success">
+      ¡El formulario se ha enviado con éxito!
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="container" style="min-width: 99%; padding: 0; margin: 0">
+  <div class="row header" style="text-align: end;">
+    <div class="col-md-6 contact-info">
+      <span>Contacto:</span>
+      <a class="a-white" href="mailto:grupotecnico@sicpcgrupo.tech">grupotecnico&#64;sicpcgrupo.tech</a>
+      <span>Llámenos:     <a class="a-white" href="tel:+528113254100">(81) 1325 4100</a>      </span>
+    </div>
+  </div>  
+  <div class="row centered-row">
+    <div class="col-md-11 text-center">
+      <img src="assets/Logo SICPC modificado.png" alt="SICPC Grupo" class="logo-sicpc">
+      <label class="company-name">Servicios Integrales y Consultoría en Protección Civil.</label>
+    </div>
+    <div *ngIf="isAuthenticated" class="col-md-1" style="font-size: 4rem; color:red; cursor: pointer;" (click)="logout()">
+      <i class="fa-solid fa-arrow-right-from-bracket"></i>
+    </div>
+  </div>
+  <hr style="margin-bottom: 0;"/>
+  <div class="row navigation-row">
+    <div class="col">
+      <a routerLink="/home" class="nav-button">Inicio</a>
+    </div>
+    <div class="col">
+      <a routerLink="/about" class="nav-button">Nosotros</a>
+    </div>
+    <div class="col">
+      <a routerLink="/services" class="nav-button">Servicios</a>
+    </div>
+    <div class="col">
+      <a routerLink="/contact" class="nav-button">Contacto</a>
+    </div>
+  </div>  
+  <hr style="margin-top: 0;"/>
+  <router-outlet></router-outlet>
+</div>

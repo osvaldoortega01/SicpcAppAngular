@@ -1,0 +1,114 @@
+<div class="container">
+  <h1>Contáctanos</h1>
+  <div class="row">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div class="row form-group">
+        <div class="col-md-6">
+          <label for="nombreCompleto">Nombre Completo</label>
+          <input
+            class="form-control"
+            id="nombreCompleto"
+            formControlName="nombreCompleto"
+            placeholder="Nombre Completo"
+          />
+          <div
+            *ngIf="
+              contactForm.get('nombreCompleto')?.touched &&
+              contactForm.get('nombreCompleto')?.invalid
+            "
+            class="text-danger"
+          >
+            Nombre Completo es requerido.
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="empresa">Empresa</label>
+          <input
+            type="text"
+            class="form-control"
+            id="empresa"
+            formControlName="empresa"
+            placeholder="Nombre de tu empresa"
+          />
+          <div
+            *ngIf="
+              contactForm.get('empresa')?.touched &&
+              contactForm.get('empresa')?.invalid
+            "
+            class="text-danger"
+          >
+            Empresa es requerida.
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="correo">Correo</label>
+          <input
+            type="email"
+            class="form-control"
+            id="correo"
+            formControlName="correo"
+            placeholder="correoEmpresarial@empresa.com"
+          />
+          <div
+            *ngIf="
+              contactForm.get('correo')?.touched &&
+              contactForm.get('correo')?.invalid
+            "
+            class="text-danger"
+          >
+            <div *ngIf="contactForm.get('correo')?.errors?.['required']">
+              Correo es requerido.
+            </div>
+            <div *ngIf="contactForm.get('correo')?.errors?.['email']">
+              Correo no es válido.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="telefono">Teléfono</label>
+          <input
+            type="tel"
+            class="form-control"
+            id="telefono"
+            formControlName="telefono"
+            placeholder="88888888"
+          />
+          <div
+            *ngIf="
+              contactForm.get('telefono')?.touched &&
+              contactForm.get('telefono')?.invalid
+            "
+            class="text-danger"
+          >
+            Teléfono es requerido.
+          </div>
+        </div>
+        <div class="form-group col-md-12">
+          <label for="mensaje">Mensaje</label>
+          <textarea
+            class="form-control"
+            id="mensaje"
+            formControlName="mensaje"
+            rows="3"
+          ></textarea>
+          <div
+            *ngIf="
+              contactForm.get('mensaje')?.touched &&
+              contactForm.get('mensaje')?.invalid
+            "
+            class="text-danger"
+          >
+            Mensaje es requerido.
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+  </div>
+  <div class="row mt-3" *ngIf="submitted">
+    <div class="col-md-12 alert alert-success">
+      ¡El formulario se ha enviado con éxito!
+    </div>
+  </div>
+
+</div>
